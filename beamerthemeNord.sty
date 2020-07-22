@@ -18,7 +18,7 @@
 \setbeamertemplate{navigation symbols}{}
 
 \setbeamersize{text margin left=6mm,text margin right=6mm}
-
+\setbeamerfont{author}{size=\small}
 
 \setbeamertemplate{caption}{\insertcaption}
 
@@ -48,9 +48,16 @@
   \setcounter{footnote}{1} % \dagger
   {\usebeamerfont{title}\usebeamercolor[fg]{title}\bfseries\boldmath\inserttitle}
   \ifx\insertsubtitle\@empty\else\\[1em] {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle}\fi~\\[2em]
-  {\structure{by}} \insertauthor\ \ifx\insertinstitute\@empty\else\quad(\insertinstitute)\fi
-  \\[1pt]
-  {\structure{on}} \insertdate\\
+  % {\structure{by}} \insertauthor\ \ifx\insertinstitute\@empty\else\quad(\insertinstitute)\fi
+  % \\[1pt]
+  % {\structure{on}} \insertdate\\
+  % \vskip1em\par
+  \begin{beamercolorbox}[sep=2pt]{author}
+    \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[sep=6pt]{institute}
+    \usebeamerfont{institute}\insertinstitute
+  \end{beamercolorbox}
   \renewcommand\thefootnote{\arabic{footnote}}
   \setcounter{footnote}{0}
 }
